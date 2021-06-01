@@ -1,0 +1,36 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'application'
+}
+
+group = 'lab.icedtech'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    implementation 'net.mamoe:mirai-core:2.6.4'
+    implementation 'io.github.microutils:kotlin-logging-jvm:2.0.6'
+    implementation 'org.slf4j:slf4j-simple:1.7.29'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'org.mongodb:mongodb-driver-legacy:4.1.2'
+}
+
+test {
+    useJUnit()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '11'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '11'
+}
+
+application {
+    mainClassName = 'MainKt'
+}
